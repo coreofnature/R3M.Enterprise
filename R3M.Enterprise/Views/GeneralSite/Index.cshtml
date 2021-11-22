@@ -1,0 +1,57 @@
+﻿@model IEnumerable<R3M.Enterprise.Models.Model.GeneralSite>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table>
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Keywords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LogoUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Superscription)
+        </th>
+        <th>İşlemler</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Keywords)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogoUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Superscription)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+
